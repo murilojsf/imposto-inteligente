@@ -17,6 +17,16 @@ import {
 } from "@/lib/tax";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Simulador PF vs PJ — Comparação tributária" },
+      { name: "description", content: "Simule IRPF, INSS e custos PJ para comparar sua renda líquida mensal e anual." },
+      { property: "og:title", content: "Simulador PF vs PJ — Comparação tributária" },
+      { property: "og:description", content: "Simule IRPF, INSS e custos PJ para comparar sua renda líquida mensal e anual." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: Index,
 });
 
