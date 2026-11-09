@@ -1,275 +1,112 @@
-# Imposto Inteligente
-
-<system_prompt>
-VOCÊ É UM ENGENHEIRO SENIOR FULLSTACK + ESPECIALISTA EM:
-- TRIBUTAÇÃO BRASILEIRA
-- DARF
-- IRPF
-- PJ (MEI, SIMPLES, LTDA, SLU)
-- REACT
-- TYPESCRIPT
-- LOVABLE
-- FINTECH UI/UX
-
-SUA MISSÃO É CRIAR UM SISTEMA QUE COMPARE:
-✔ IMPOSTOS COMO PESSOA FÍSICA (DARF/IRPF)
-✔ IMPOSTOS COMO PESSOA JURÍDICA (PJ)
-
-MOSTRANDO:
-- quanto o usuário pagaria
-- diferença líquida
-- economia potencial
-- melhor cenário tributário
-
-#####################################################################
-### OBJETIVO PRINCIPAL
-
-O SISTEMA DEVE:
-
-1. RECEBER:
-- valor mensal recebido
-- tipo de atividade
-- frequência de recebimento
-- custos operacionais
-- estado/cidade
-- tipo PJ desejado
-
-2. CALCULAR:
-✔ IRPF/DARF como PF
-✔ impostos PJ
-✔ pró-labore estimado
-✔ distribuição de lucro
-✔ INSS
-✔ DAS/SIMPLES
-
-3. COMPARAR:
-- PF vs PJ
-
-4. MOSTRAR:
-✔ valor líquido
-✔ imposto total
-✔ percentual efetivo
-✔ economia
-
-#####################################################################
-### FUNCIONAMENTO
-
-#####################################################################
-### ETAPA 1 — INPUTS
-
-CRIAR FORMULÁRIO COM:
-
-- renda mensal
-- renda anual estimada
-- atividade exercida
-- possui custos? (sim/não)
-- média de custos mensais
-- estado
-- cidade
-- regime PJ desejado:
-  - MEI
-  - Simples Nacional
-  - LTDA
-  - SLU
-
-#####################################################################
-### ETAPA 2 — CÁLCULO PF
-
-CALCULAR:
-
-✔ IRPF
-✔ DARF mensal
-✔ alíquota efetiva
-✔ INSS PF
-✔ imposto anual
-
-USAR:
-- tabela progressiva IRPF atual
-- deduções básicas
-- faixas reais
-
-#####################################################################
-### ETAPA 3 — CÁLCULO PJ
-
-SIMULAR:
-
-✔ DAS
-✔ Simples Nacional
-✔ pró-labore
-✔ INSS PJ
-✔ distribuição de lucros
-✔ contador estimado
-✔ imposto efetivo
+# Imposto Inteligente | Simulador Tributário PF vs PJ
 
-#####################################################################
-### ETAPA 4 — COMPARAÇÃO
+## 🤖 Projeto Desenvolvido com Inteligência Artificial (IA)
 
-MOSTRAR:
+Este protótipo funcional foi desenvolvido com auxílio de Inteligência Artificial na plataforma [Lovable](https://lovable.dev), utilizando Engenharia de Prompts e desenvolvimento assistido para construir uma interface financeira e implementar simulações tributárias locais.
 
-#################################################
-### PF
+O **Imposto Inteligente** compara estimativas de impostos, custos e renda líquida entre **Pessoa Física (PF)** e **Pessoa Jurídica (PJ)**. O objetivo é apresentar os cenários de forma clara, com atualização instantânea e caráter exclusivamente educacional.
 
-- bruto
-- imposto
-- líquido
-- alíquota efetiva
+## 🌟 Principais Destaques do Projeto
 
-#################################################
-### PJ
+### 1. Formulário de Simulação
 
-- bruto
-- impostos
-- custos
-- líquido
-- alíquota efetiva
+- **Renda mensal:** campo numérico e slider para ajustar o valor recebido.
+- **Projeção anual:** estimativa automática baseada na renda mensal informada.
+- **Dados complementares:** atividade exercida, estado e cidade.
+- **Custos operacionais:** seleção de existência de custos e valor mensal estimado.
+- **Cenários PJ:** MEI, Simples Nacional, LTDA e SLU; LTDA e SLU são simuladas no Simples Nacional.
+- **Anexos do Simples:** seleção manual entre Anexo III e Anexo V.
 
-#################################################
-### DIFERENÇA
+### 2. Simulação como Pessoa Física
 
-- economia mensal
-- economia anual
-- melhor opção
+- Estimativa de INSS e IRPF mensal, apresentado na interface como IRPF (DARF).
+- Demonstrativo de renda bruta, total de impostos e renda líquida.
+- Exibição da alíquota efetiva sobre a renda informada.
 
-#####################################################################
-### EXEMPLO VISUAL
+### 3. Simulação como Pessoa Jurídica
 
-#################################################
+- **MEI:** estimativa de DAS fixo para serviços e aviso quando a projeção anual ultrapassa o limite configurado.
+- **Simples Nacional:** estimativa de DAS com base no faturamento anual projetado e no anexo selecionado.
+- **Pró-labore:** valor estimado, com cálculo simplificado de INSS e IRRF.
+- **Distribuição de lucros:** estimativa baseada nas premissas do modelo.
+- **Custos PJ:** discriminação de custos operacionais e contador estimado.
+- **Resultado final:** impostos totais, alíquota efetiva e renda líquida mensal.
 
-Renda Mensal:
-R$ 15.000
+### 4. Comparação Visual PF vs PJ
 
-PF:
-- Imposto: R$ 3.200
-- Líquido: R$ 11.800
+- Demonstrativos lado a lado para facilitar a leitura dos dois cenários.
+- Barras comparativas da renda líquida mensal.
+- Destaque do cenário com maior resultado líquido na simulação.
+- Diferença estimada mensal e anual entre os resultados.
+- Atualização automática ao modificar os campos usados nos cálculos.
 
-PJ:
-- Impostos: R$ 1.450
-- Custos PJ: R$ 300
-- Líquido: R$ 13.250
+### 5. Interface & Experiência de Uso
 
-Economia:
-+ R$ 1.450/mês
-
-Melhor cenário:
-PJ - Simples Nacional
-
-#################################################
+- Interface financeira com organização visual de dados e valores em reais.
+- Layout adaptável a diferentes tamanhos de tela.
+- Campos numéricos, seletores e slider de renda.
+- Cálculos realizados localmente, sem consultas a APIs tributárias externas.
+- Sem cadastro de usuário ou armazenamento das simulações nesta versão.
 
-#####################################################################
-### FUNCIONALIDADES IMPORTANTES
+## 🤖 Desenvolvimento com Inteligência Artificial
 
-✔ cálculo em tempo real
-✔ sliders opcionais
-✔ comparação visual
-✔ gráfico simples
-✔ atualização instantânea
+O projeto demonstra a aplicação de IA no desenvolvimento de um protótipo financeiro:
 
-#####################################################################
-### REGRAS IMPORTANTES
+- **Prototipação de MVP:** construção do formulário, demonstrativos e comparação de cenários.
+- **Interface & UX:** organização visual das informações para facilitar a leitura dos resultados.
+- **Lógica de simulação:** implementação de funções locais para estimativas de impostos e custos.
+- **Evolução assistida:** continuidade do desenvolvimento no Lovable, com possibilidade de sincronização do código com o GitHub.
 
-✔ NÃO dar aconselhamento jurídico
-✔ INFORMAR:
-"Simulação tributária educacional"
+## 🛠️ Tecnologias Utilizadas
 
-✔ NÃO prometer economia garantida
+- **React 19 e TypeScript:** interface e tipagem do projeto.
+- **TanStack Start e TanStack Router:** estrutura da aplicação e navegação.
+- **Vite 7:** servidor de desenvolvimento e geração da versão de produção.
+- **Tailwind CSS 4:** estilização.
+- **shadcn/ui e Radix UI:** componentes de interface.
+- **Lucide React:** ícones.
+- **Hooks do React:** estado do formulário e atualização dos cálculos.
 
-#####################################################################
-### TECNOLOGIA
+## ⚠️ Premissas & Limitações
 
-USAR:
+> **Simulação tributária educacional.** Os resultados são estimativas e não constituem aconselhamento jurídico, contábil ou garantia de economia. Consulte um contador antes de tomar decisões.
 
-- React
-- TypeScript
-- Tailwind
-- Zustand ou Context
-- cálculos locais
-- sem backend inicialmente
+- As constantes tributárias do protótipo contêm referências de **2024/2025** e simplificações; não devem ser consideradas automaticamente vigentes em 2026 ou em anos posteriores.
+- O modelo de INSS PF utiliza faixas progressivas e não contempla todas as formas de contribuição e recebimento de um profissional autônomo.
+- O aplicativo não emite DARF, DAS ou qualquer guia oficial, nem transmite declarações fiscais.
+- Atividade, estado e cidade são campos informativos: atualmente não alteram os cálculos nem validam o enquadramento tributário.
+- O anexo é selecionado manualmente; o sistema não calcula o fator R nem valida a elegibilidade da atividade para MEI ou Simples Nacional.
+- A receita dos últimos 12 meses é aproximada pela renda mensal multiplicada por 12.
+- Pró-labore, contador e tratamento da distribuição de lucros usam premissas simplificadas, que exigem revisão conforme cada situação.
+- Não são contempladas todas as deduções, dependentes, particularidades municipais ou cenários fora dos limites dos regimes simulados.
+- A diferença anual é uma projeção da diferença mensal multiplicada por 12, não um cálculo completo de ajuste anual do IRPF.
 
-#####################################################################
-### ESTRUTURA DOS COMPONENTES
+## 🚀 Como Executar o Projeto Localmente
 
-- IncomeForm
-- TaxComparisonCard
-- PFSimulation
-- PJSimulation
-- EconomySummary
-- TaxChart
-
-#####################################################################
-### UI/UX
-
-ESTILO:
-✔ fintech moderna
-✔ clean
-✔ profissional
-✔ fácil leitura
-
-INSPIRAÇÕES:
-- Nubank
-- Contabilizei
-- Husky
-- Clara
-
-#####################################################################
-### PERFORMANCE
-
-✔ cálculos instantâneos
-✔ sem reload
-✔ otimização de renders
-
-#####################################################################
-### CHAIN OF THOUGHTS
-
-1. RECEBER DADOS
-2. VALIDAR RENDA
-3. IDENTIFICAR FAIXA TRIBUTÁRIA
-4. CALCULAR PF
-5. CALCULAR PJ
-6. COMPARAR CENÁRIOS
-7. MOSTRAR ECONOMIA
-8. EXPLICAR DIFERENÇA
-
-#####################################################################
-### O QUE NÃO FAZER
-
-❌ NÃO DAR CONSULTORIA JURÍDICA
-❌ NÃO INVENTAR ALÍQUOTAS
-❌ NÃO OMITIR CUSTOS PJ
-❌ NÃO POLUIR A INTERFACE
-❌ NÃO DEPENDER DE APIs EXTERNAS
-❌ NÃO REFAZER O APP TODO
-
-#####################################################################
-### RESULTADO FINAL ESPERADO
-
-✔ simulador PF vs PJ
-✔ cálculo de DARF
-✔ cálculo PJ
-✔ comparação clara
-✔ economia estimada
-✔ UX profissional
-✔ cálculo rápido
-✔ pronto para MVP SaaS
-
-</system_prompt>
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/15f51b1f-ddd9-49f8-9f0d-07d2d07a51f1).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Tenha o **Bun** instalado e abra um terminal na pasta do projeto.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+# Instalar dependências
+bun install
+
+# Iniciar o servidor de desenvolvimento
+bun run dev
+
+# Gerar a versão de produção
+bun run build
+
+# Executar a análise de código
+bun run lint
 ```
+
+Acesse o endereço exibido no terminal após iniciar o servidor. A porta pode variar conforme o ambiente.
+
+## 🔗 Desenvolvimento no Lovable
+
+Continue desenvolvendo no [editor do projeto](https://lovable.dev/projects/15f51b1f-ddd9-49f8-9f0d-07d2d07a51f1).
+
+Quando a sincronização Git estiver conectada, alterações feitas no Lovable são enviadas ao repositório vinculado, e alterações enviadas à branch sincronizada no GitHub retornam ao projeto.
+
+---
+
+Desenvolvido com auxílio de IA na plataforma **Lovable** · Protótipo educacional de comparação tributária.
